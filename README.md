@@ -8,7 +8,7 @@ discanvas
 
 ## Example of code
 ```js
-const RankCard = require('discanvas');
+const discanvas = require('discanvas');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
@@ -30,8 +30,8 @@ client.on('message', async (message) => {
             .setBorderColor("#00ff55")
             .toCard()
 
-        const attachment = new Discord.MessageAttachment(rankcard.toBuffer(), 'RankCard.jpg');
-        await message.channel.send(attachment);
+        const attachment = new Discord.MessageAttachment(rankcard.toBuffer(), "RankCard.jpg");
+        message.channel.send(attachment);
     }
 });
 
