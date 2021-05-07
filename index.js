@@ -7,3 +7,5 @@ My Discord : https://discord.gg/A59kDPN
 */
 
 module.exports.RankCard = require('./canvas/rankcard');
+module.exports.Welcome = require('./canvas/welcome');
+module.exports.Leave = require('./canvas/leave');
