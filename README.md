@@ -29,7 +29,6 @@ client.on('message', async (message) => {
             .setSquareOpacity(0.2)
             .setBorderColor("#00ff55")
             .toCard()
-            .toCard();
 
         const attachment = new Discord.MessageAttachment(rankcard.toBuffer(), 'RankCard.jpg');
         await message.channel.send(attachment);
