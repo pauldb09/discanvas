@@ -41,14 +41,18 @@ client.on('message', async (message) => {
         message.channel.send(attachment);
     }
 });
+```
 
+![img](https://cdn.discordapp.com/attachments/819995259261288475/840151051440226304/RankCard.jpg)
+
+```js
 client.on('guildMemberAdd', member => {
     const welcome = await new discanvas.Welcome()
     .setAvatar(member.user.displayAvatarURL({ format: 'png' }))
     .setUsername(member.user.tag)
     .setBackground("https://cdn.discordapp.com/attachments/819995259261288475/835055559941292032/style.jpg")
     .setMainText("Welcome")
-    .setSecondText(`We are now ${member.guild.meberCount} in the guild !`)
+    .setSecondText(`We are now ${member.guild.memberCount} in the guild !`)
     /*
     .setCircleColor("#ff5555")
     .setMainTextColor("#ff5555")
@@ -61,7 +65,11 @@ client.on('guildMemberAdd', member => {
     const welcomeChannel = client.channels.cache.get("id channel")
     welcomeChannel.send(`Welcome ${member.user.username}`, attachment);
 });
+```
 
+![img](https://cdn.discordapp.com/attachments/819995259261288475/840578441481027624/welcome.jpg)
+
+```js
 client.on('guildMemberRemove', member => {
     const leave = await new discanvas.Leave()
     .setAvatar(member.user.displayAvatarURL({ format: 'png' }))
@@ -84,7 +92,8 @@ client.on('guildMemberRemove', member => {
 
 client.login('your token');
 ```
-![img](https://cdn.discordapp.com/attachments/819995259261288475/840151051440226304/RankCard.jpg)
+
+![img](https://cdn.discordapp.com/attachments/819995259261288475/840578868199817216/leave.jpg)
 
 # Server Support 
 
