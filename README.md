@@ -2,7 +2,8 @@
 ## From simple image with configurable canvas
 ### More canvas coming soon
 
-discanvas
+Simple canvas with discanvas
+[![npm](https://img.shields.io/npm/v/discanvas)](https://npmjs.org/discanvas)
 
 > V1
 
@@ -91,3 +92,6 @@ client.on('guildMemberRemove', member => {
 client.login('your token');
 ```
 ![img](https://cdn.discordapp.com/attachments/819995259261288475/840374209985249290/leave.jpg)
+
+Server Sipport 
+[![Discord Banner](https://discordapp.com/api/guilds/759432409400999967/widget.png?style=banner2)](https://discord.gg/A59kDPN)
