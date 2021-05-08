@@ -95,6 +95,6 @@ client.login('your token');
 ```
 ![img](https://cdn.discordapp.com/attachments/819995259261288475/840374209985249290/leave.jpg)
 
-#Server SUpport 
+# Server Support 
 
 [![Discord Banner](https://discordapp.com/api/guilds/759432409400999967/widget.png?style=banner2)](https://discord.gg/A59kDPN)
