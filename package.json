@@ -1,6 +1,6 @@
 {
   "name": "discanvas",
-  "version": "1.0.7",
+  "version": "1.4.5",
   "description": "",
   "main": "index.js",
   "keywords": [
@@ -9,6 +9,8 @@
     "discord.js",
     "canvas",
     "welcome",
+    "leave",
+    "configuration",
     "assets"
   ],
   "scripts": {
