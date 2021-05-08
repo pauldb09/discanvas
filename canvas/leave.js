@@ -7,7 +7,7 @@ My Instagram : https://www.instagram.com/squarfiuz07/
 My Discord : https://discord.gg/A59kDPN 
 */
 
-module.exports = class leave {
+module.exports = class Leave {
     constructor() {
         this.avatar = "https://cdn.discordapp.com/attachments/764776215273406464/839817855738576896/unknown.png"
         this.username = "username#0000"
