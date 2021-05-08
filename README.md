@@ -12,8 +12,6 @@ Simple canvas with discanvas
 
 ## Example of code
 
-Rankcard :
-
 ```js
 const discanvas = require('discanvas');
 const Discord = require('discord.js');
@@ -43,19 +41,14 @@ client.on('message', async (message) => {
         message.channel.send(attachment);
     }
 });
-```
 
-![img](https://cdn.discordapp.com/attachments/819995259261288475/840151051440226304/RankCard.jpg)
-
-Welcome :
-
-```js
 client.on('guildMemberAdd', member => {
     const welcome = await new discanvas.Welcome()
     .setAvatar(member.user.displayAvatarURL({ format: 'png' }))
     .setUsername(member.user.tag)
     .setBackground("https://cdn.discordapp.com/attachments/819995259261288475/835055559941292032/style.jpg")
-    .setMemberCount(member.guild.memberCount)
+    .setMainText("Welcome")
+    .setSecondText(`We are now ${member.guild.meberCount} in the guild !`)
     /*
     .setCircleColor("#ff5555")
     .setMainTextColor("#ff5555")
@@ -66,35 +59,32 @@ client.on('guildMemberAdd', member => {
 
     const attachment = new Discord.MessageAttachment(welcome.toBuffer(), "welcome.jpg");
     const welcomeChannel = client.channels.cache.get("id channel")
-    welcomeChannel.send(`Bienvenue ${member.user.username}`, attachment);
+    welcomeChannel.send(`Welcome ${member.user.username}`, attachment);
 });
-```
 
-![img](https://cdn.discordapp.com/attachments/819995259261288475/840374235121844274/welcome.jpg)
-
-Leave
-
-```js
 client.on('guildMemberRemove', member => {
     const leave = await new discanvas.Leave()
     .setAvatar(member.user.displayAvatarURL({ format: 'png' }))
     .setUsername(member.user.tag)
     .setBackground("https://cdn.discordapp.com/attachments/819995259261288475/835055559941292032/style.jpg")
+    .setMainText("Good bye")
+    .setSecondText("Your departure makes us sad")
     /*
     .setCircleColor("#ff5555")
     .setMainTextColor("#ff5555")
+    .setSecondTextColor("#ff5555")
     .setPseudoColor("#ff5555")
     */
     .toLeave()
 
     const attachment = new Discord.MessageAttachment(leave.toBuffer(), "leave.jpg");
     const leaveChannel = client.channels.cache.get("id channel")
-    leaveChannel.send(`Au revoir ${member.user.username}`, attachment);
+    leaveChannel.send(`Good bye ${member.user.username}`, attachment);
 });
 
 client.login('your token');
 ```
-![img](https://cdn.discordapp.com/attachments/819995259261288475/840374209985249290/leave.jpg)
+![img](https://cdn.discordapp.com/attachments/819995259261288475/840151051440226304/RankCard.jpg)
 
 # Server Support 
 
