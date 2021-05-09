@@ -1,5 +1,5 @@
 const Canvas = require('canvas');
-Canvas.registerFont('./node_modules/discanvas/assets/fonts/Roboto-Black.ttf', { family: 'Roboto' })
+Canvas.registerFont("./Roboto-Black.ttf", { family: 'Roboto' })
 /*
 By squarfiuz07
 My Youtube Channel : https://www.youtube.com/channel/UC2ACluqDgpeNbexpdaTACmw
@@ -7,7 +7,7 @@ My Instagram : https://www.instagram.com/squarfiuz07/
 My Discord : https://discord.gg/A59kDPN 
 */
 
-module.exports = class Leave {
+module.exports = class leave {
     constructor() {
         this.avatar = "https://cdn.discordapp.com/attachments/764776215273406464/839817855738576896/unknown.png"
         this.username = "username#0000"
@@ -18,6 +18,7 @@ module.exports = class Leave {
         this.secondTextColor = "#fff"
         this.pseudoColor = "#fff"
         this.background = ""
+        this.backgroundColor = ""
     }
     setAvatar(value) {
         this.avatar = value;
@@ -51,9 +52,16 @@ module.exports = class Leave {
         this.pseudoColor = value;
         return this;
     }
-    setBackground(value) {
-        this.background = value;
-        return this;
+    setBackground(type, value) {
+        if(type == "BACKGROUND"){
+            this.background = value;
+            return this;
+        }else if(type == "COLOR"){
+            this.backgroundColor = value;
+            return this;
+        }else{
+            throw "The first argument of .setBackground must be 'COLOR' or 'BACKGROUND'.";
+        }
     }
 
     async toLeave() {
@@ -63,6 +71,12 @@ module.exports = class Leave {
         if (this.background || this.background !== "") {
             const background = await Canvas.loadImage(this.background);
             ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+        }
+
+        if (this.backgroundColor || this.backgroundColor !== "") {
+            ctx.beginPath();
+            ctx.fillStyle = this.backgroundColor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height)
         }
 
         ctx.font = '68px "Roboto Black"';
