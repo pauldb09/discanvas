@@ -1,5 +1,5 @@
 const Canvas = require('canvas');
-Canvas.registerFont("./Roboto-Black.ttf", { family: 'Roboto' })
+Canvas.registerFont('./node_modules/discanvas/assets/fonts/Roboto-Black.ttf', { family: 'Roboto' })
 /*
 By squarfiuz07
 Discanvas
