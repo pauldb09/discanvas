@@ -1,5 +1,5 @@
 const Canvas = require('canvas');
-Canvas.registerFont('./node_modules/discanvas/assets/fonts/Roboto-Black.ttf', { family: 'Roboto' })
+Canvas.registerFont("./Roboto-Black.ttf", { family: 'Roboto' })
 /*
 By squarfiuz07
 Discanvas
@@ -18,6 +18,7 @@ module.exports = class RankCard {
         this.username = "username#0000"
         this.top = 1
         this.background = ""
+        this.backgroundColor = ""
         this.squareOpacity = 0.7
         this.borderColor = "#ff5555"
     }
@@ -53,9 +54,16 @@ module.exports = class RankCard {
         this.discriminator = value;
         return this;
     }
-    setBackground(value) {
-        this.background = value;
-        return this;
+    setBackground(type, value) {
+        if(type == "BACKGROUND"){
+            this.background = value;
+            return this;
+        }else if(type == "COLOR"){
+            this.backgroundColor = value;
+            return this;
+        }else{
+            throw "The first argument of .setBackground must be 'COLOR' or 'BACKGROUND'.";
+        }
     }
     setSquareOpacity(value) {
         this.squareOpacity = value;
@@ -77,8 +85,16 @@ module.exports = class RankCard {
             ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
         }
 
-        ctx.strokeStyle = this.borderColor;
-        ctx.strokeRect(0, 0, canvas.width, canvas.height);
+        if (this.backgroundColor || this.backgroundColor !== "") {
+            ctx.beginPath();
+            ctx.fillStyle = this.backgroundColor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height)
+        }
+
+        if(this.borderColor || this.borderColor !== ""){
+            ctx.strokeStyle = this.borderColor;
+            ctx.strokeRect(0, 0, canvas.width, canvas.height);
+        }
 
         ctx.beginPath();
         ctx.fillStyle = "#000";
